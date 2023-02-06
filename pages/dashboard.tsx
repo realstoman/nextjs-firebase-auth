@@ -1,9 +1,33 @@
-import React from 'react';
+import ProtectedRoute from '@/components/ProtectedRoute';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/router';
 
-export const dashboard = () => {
+const Dashboard = () => {
+	const { user, logOut } = useAuth();
+	const router = useRouter();
 	return (
-		<div>
-			<h1>Welcome your dashboard</h1>
-		</div>
+		<ProtectedRoute>
+			<div className="flex py-2 container mx-auto">
+				<div className="text-gray-600 px-12 py-24 mt-24 overflow-y-hidden mx-auto">
+					<h2 className="text-2xl font-semibold">
+						You are logged in!
+					</h2>
+
+					<div className="flex justify-center items-center mb-8">
+						<button
+							onClick={() => {
+								logOut();
+								router.push('/');
+							}}
+							className="bg-green-600 hover:bg-green-700 px-10 py-3 rounded-md shadow-sm text-white"
+						>
+							Logout
+						</button>
+					</div>
+				</div>
+			</div>
+		</ProtectedRoute>
 	);
 };
+
+export default Dashboard;

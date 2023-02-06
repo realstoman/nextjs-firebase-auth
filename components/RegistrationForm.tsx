@@ -1,10 +1,9 @@
+import { useAuth } from '@/context/AuthContext';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { PageWrapper } from './PageWrapper';
-// import { useAuth } from '../../context/AuthContext';
-// import { PageWrapper } from '../common/PageWrapper';
 
 interface RegistrationType {
 	email: string;
@@ -17,13 +16,14 @@ const RegistrationForm = () => {
 		password: '',
 	});
 
-	// const { signUp } = useAuth();
+	// Use the signUp method from the AuthContext
+	const { signUp } = useAuth();
 	const router = useRouter();
 
 	const handleRegistration = async (e: any) => {
 		e.preventDefault();
 		try {
-			// await signUp(data.email, data.password);
+			await signUp(data.email, data.password);
 			router.push('/dashboard');
 		} catch (error: any) {
 			console.log(error.message);
@@ -36,16 +36,6 @@ const RegistrationForm = () => {
 
 	// Disable submit button until all fields are filled in
 	const canSubmit = [...Object.values(allData)].every(Boolean);
-
-	// React Hook Form Example
-	// const onSubmit = async (data: SignUpType) => {
-	// 	try {
-	// 		await signUp(data.email, data.password);
-	// 		router.push('/dashboard');
-	// 	} catch (error: any) {
-	// 		console.log(error.message);
-	// 	}
-	// };
 
 	return (
 		<PageWrapper>
