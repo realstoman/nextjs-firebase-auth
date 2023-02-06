@@ -1,5 +1,3 @@
-import { FiGithub } from 'react-icons/fi';
-
 function Footer() {
 	return (
 		<>
