@@ -3,55 +3,45 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { PageWrapper } from './PageWrapper';
 import { FiChevronRight } from 'react-icons/fi';
-// import { useAuth } from '../../context/AuthContext';
-// import { PageWrapper } from '../common/PageWrapper';
+import { useAuth } from '@/context/AuthContext';
 
-// interface LoginType {
-// 	email: string;
-// 	password: string;
-// }
+interface LoginType {
+	email: string;
+	password: string;
+}
 
 const LoginForm = () => {
 	// const methods = useForm<LoginType>({ mode: 'onBlur' });
-	// const [data, setData] = useState<LoginType>({
-	// 	email: '',
-	// 	password: '',
-	// });
+	const [data, setData] = useState<LoginType>({
+		email: '',
+		password: '',
+	});
 
-	// const { logIn } = useAuth();
-	// const router = useRouter();
+	// Use the signIn method from the AuthContext
+	const { logIn } = useAuth();
+	const router = useRouter();
 
-	// const handleLogin = async (e: any) => {
-	// 	e.preventDefault();
-	// 	try {
-	// 		await logIn(data.email, data.password);
-	// 		router.push('/dashboard');
-	// 	} catch (error: any) {
-	// 		console.log(error.message);
-	// 	}
-	// };
+	const handleLogin = async (e: any) => {
+		e.preventDefault();
+		try {
+			await logIn(data.email, data.password);
+			router.push('/dashboard');
+		} catch (error: any) {
+			console.log(error.message);
+		}
+	};
 
-	// Destructure data from the object
-	// const { ...allData } = data;
+	// Destructure data from the data object
+	const { ...allData } = data;
 
 	// Disable submit button until all fields are filled in
-	// const canSubmit = [...Object.values(allData)].every(Boolean);
-
-	// React Hook Form Example
-	// const onSubmit = async (data: LoginType) => {
-	// 	try {
-	// 		await logIn(data.email, data.password);
-	// 		router.push('/dashboard');
-	// 	} catch (error: any) {
-	// 		console.log(error.message);
-	// 	}
-	// };
+	const canSubmit = [...Object.values(allData)].every(Boolean);
 
 	return (
 		<PageWrapper>
 			<div className="flex justify-center items-center min-h-screen">
 				<div className="w-full max-w-sm p-4 py-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 sm:py-10 md:p-8 md:py-14 dark:bg-gray-800 dark:border-gray-700">
-					<form action="" className="group">
+					<form action="" onSubmit={handleLogin} className="group">
 						<h5 className="text-2xl sm:text-3xl font-medium sm:font-semibold text-gray-900 dark:text-white text-center mb-2">
 							Login
 						</h5>
@@ -76,10 +66,10 @@ const LoginForm = () => {
 								pattern="[a-z0-9._+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 								placeholder="name@company.com"
 								onChange={(e: any) => {
-									// setData({
-									// 	...data,
-									// 	email: e.target.value,
-									// });
+									setData({
+										...data,
+										email: e.target.value,
+									});
 								}}
 							/>
 							<span className="mt-1 hidden text-sm text-red-400">
@@ -102,10 +92,10 @@ const LoginForm = () => {
 								pattern=".{8,}"
 								required
 								onChange={(e: any) => {
-									// setData({
-									// 	...data,
-									// 	password: e.target.value,
-									// });
+									setData({
+										...data,
+										password: e.target.value,
+									});
 								}}
 							/>
 							<span className="mt-1 hidden text-sm text-red-400">
@@ -115,7 +105,7 @@ const LoginForm = () => {
 
 						<button
 							type="submit"
-							// disabled={!canSubmit}
+							disabled={!canSubmit}
 							className="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 text-center mb-8 mt-2 disabled:bg-gradient-to-br disabled:from-gray-100 disabled:to-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed group-invalid:bg-gradient-to-br group-invalid:from-gray-100 group-invalid:to-gray-300 group-invalid:text-gray-400 group-invalid:pointer-events-none group-invalid:opacity-70"
 						>
 							Login to your account

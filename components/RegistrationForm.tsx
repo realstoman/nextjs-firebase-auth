@@ -31,7 +31,7 @@ const RegistrationForm = () => {
 		console.log(data);
 	};
 
-	// Destructure data from the object
+	// Destructure data from the data object
 	const { ...allData } = data;
 
 	// Disable submit button until all fields are filled in
@@ -116,9 +116,10 @@ const RegistrationForm = () => {
 						<div className="text-md font-medium text-gray-500 dark:text-gray-300 flex text-center justify-center items-center">
 							<NextLink
 								href="/"
-								className="text-blue-700 hover:underline dark:text-blue-500 flex justify-between items-center w-16"
+								className="text-gray-500 hover:text-gray-800 hover:underline dark:text-gray-200 dark:hover:text-white flex justify-between items-center w-32"
 							>
 								<FiChevronLeft className="text-xl" /> Login
+								Instead
 							</NextLink>
 						</div>
 					</form>
