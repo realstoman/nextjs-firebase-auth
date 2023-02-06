@@ -7,9 +7,9 @@ const Dashboard = () => {
 	const router = useRouter();
 	return (
 		<ProtectedRoute>
-			<div className="flex py-2 container mx-auto min-h-screen">
+			<div className="flex py-2 container mx-auto min-h-screen items-center">
 				<div className="text-gray-600 px-12 py-24 mt-24 overflow-y-hidden mx-auto">
-					<h2 className="text-2xl font-semibold">
+					<h2 className="text-2xl font-semibold mb-4">
 						You are logged in!
 					</h2>
 
