@@ -16,7 +16,7 @@ export default function Home() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main className="px-4 m-0 bg-gradient-to-br from-primary-color to-blue-400 min-h-screen">
+			<main className="px-4 m-0 bg-gradient-to-br from-primary-color to-blue-400">
 				<LoginForm />
 			</main>
 		</>

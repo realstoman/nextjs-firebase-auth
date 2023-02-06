@@ -34,7 +34,7 @@ const LoginForm = () => {
 
 	return (
 		<PageWrapper>
-			<div className="flex justify-center items-center min-h-screen">
+			<div className="flex justify-center items-center">
 				<div className="w-full max-w-sm p-4 py-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 sm:py-10 md:p-8 md:py-14 dark:bg-gray-800 dark:border-gray-700">
 					<form action="" onSubmit={handleLogin} className="group">
 						<h5 className="text-2xl sm:text-3xl font-medium sm:font-semibold text-gray-900 dark:text-white text-center mb-2">

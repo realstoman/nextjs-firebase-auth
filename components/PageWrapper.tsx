@@ -1,5 +1,6 @@
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
+import Footer from './common/Footer';
 
 export const PageWrapper = ({ children }: { children: any }) => {
 	return (
@@ -16,8 +17,12 @@ export const PageWrapper = ({ children }: { children: any }) => {
 					}}
 					exit={{ opacity: 0, y: 0 }}
 					transition={{ delay: 0.3 }}
+					className="min-h-screen flex justify-center items-center"
 				>
-					{children}
+					<div>
+						{children}
+						<Footer />
+					</div>
 				</motion.div>
 			</AnimatePresence>
 		</>

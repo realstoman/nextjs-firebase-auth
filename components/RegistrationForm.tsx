@@ -35,7 +35,7 @@ const RegistrationForm = () => {
 
 	return (
 		<PageWrapper>
-			<div className="flex justify-center items-center min-h-screen">
+			<div className="flex justify-center items-center">
 				<div className="w-full max-w-sm p-4 py-8 bg-white border border-gray-200 rounded-lg shadow-md sm:p-6 sm:py-10 md:p-8 md:py-14 dark:bg-gray-800 dark:border-gray-700">
 					<form
 						action=""
