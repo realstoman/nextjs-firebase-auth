@@ -1,38 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Firebase Authentication With Next.js
 
-## Getting Started
+Learn how to implement Google Firebase Authentication in your React, Next.js, TypeScript projects.
 
-First, run the development server:
+![NextJS-Firebase-Auth](https://user-images.githubusercontent.com/16396664/216896590-f366b211-cab7-4347-ab72-784d140c82a2.JPG)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Demo URL
+
+[https://firebase-auth-with-nextjs.netlify.app/](https://firebase-auth-with-nextjs.netlify.app/)
+
+## Features
+
+-   Authentication with Google Firebase v9
+-   Form validation with Tailwind CSS
+-   React context API
+-   Custom Hooks
+-   Clean UI
+-   Protected routes
+-   Next.js v13
+-   TypeScript v4.9
+-   [Tailwind CSS v3](https://tailwindcss.com)
+-   Forms designed for both light and dark modes
+-   Framer motion transitions
+
+### To Contribute to this project, please read the [Contribution Guidlines](https://github.com/realstoman/nextjs-firebase-auth/blob/main/CONTRIBUTING.md)
+
+## Database Setup
+
+1. Create a Firebase project [here](https://console.firebase.google.com/)
+
+1. Make sure the `.env` file is added to the `.gitignore` file
+
+1. Rename the `.env.example` to `.env` or `.env.local`
+
+1. Add your Firebase project configurations to the `.env` file. I have already prepared the the environment variables for you.
+
+1. If you're not familiar with setting up a Firebase project, read [this article](https://www.stoman.me/articles/nextjs-firebase-auth) I wrote for this project available on my website where I have explained every step with screenshots.
+
+## Project Setup
+
+1. Make sure you have Node JS installed. If you don't have it:
+
+-   [Download it from nodejs.org](https://nodejs.org)
+-   [Install it using NVM ](https://github.com/nvm-sh/nvm)
+-   If you're on Mac, Homebrew is a good option too:
+
+```
+brew install node
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Clone the repo:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+git clone https://github.com/realstoman/nextjs-firebase-auth.git
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Open the project folder:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+cd nextjs-firebase-auth
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Install packages and dependencies:
 
-## Learn More
+```
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Start a local dev server at `http://localhost:3000`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
+-   Always run `npm install` after pulling new changes.
+-   Feel free to use the code in your projects.
+-   I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo or in progress.
+-   Coming Soon [I'll be doing a screencast](https://www.youtube.com/@realstoman). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this project.
+-   Contributions are welcome.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://github.com/realstoman/nextjs-firebase-auth/blob/main/LICENSE)
