@@ -4,14 +4,9 @@ import { useState } from 'react';
 import { PageWrapper } from './PageWrapper';
 import { FiChevronRight } from 'react-icons/fi';
 import { useAuth } from '@/context/AuthContext';
-
-interface LoginType {
-	email: string;
-	password: string;
-}
+import { LoginType } from '@/types/AuthTypes';
 
 const LoginForm = () => {
-	// const methods = useForm<LoginType>({ mode: 'onBlur' });
 	const [data, setData] = useState<LoginType>({
 		email: '',
 		password: '',

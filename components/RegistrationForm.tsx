@@ -1,14 +1,10 @@
 import { useAuth } from '@/context/AuthContext';
+import { RegistrationType } from '@/types/AuthTypes';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
 import { PageWrapper } from './PageWrapper';
-
-interface RegistrationType {
-	email: string;
-	password: string;
-}
 
 const RegistrationForm = () => {
 	const [data, setData] = useState<RegistrationType>({
